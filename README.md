@@ -2,6 +2,24 @@
 
 A [HACS](https://hacs.xyz/) custom integration that monitors your [UrBackup](https://www.urbackup.org/) server directly from Home Assistant.
 
+## About this fork
+
+Forked from [whallil/ha-urbackup-monitor](https://github.com/whallil/ha-urbackup-monitor), with three fixes:
+
+- **Storage sensors reported gibibytes under a GB label.** `_bytes_to_gb` divided
+  by 1024³ while the sensor declares `UnitOfInformation.GIGABYTES`, which Home
+  Assistant treats as 10⁹ — every storage figure came out 7.4% low, and HA's own
+  unit conversions inherited the error. Now decimal GB.
+- **`host:port` without a scheme produced a double port.** Entering
+  `nas.lan:55414` in the config flow became `http://nas.lan:55414:55414` and
+  could not connect. URL normalization is now a single tested function: a bare
+  host gets the default port, a host that already has one keeps it, and an
+  explicit scheme is left untouched so a reverse proxy on 80/443 still works.
+- **Wrong-port setups failed with "Unexpected error".** A non-JSON reply (the
+  usual symptom of pointing at another web UI) raised `JSONDecodeError` straight
+  through the config flow. Non-JSON replies and timeouts now surface as
+  "cannot connect".
+
 ## Features
 
 - **Per-client devices** — each UrBackup client appears as a device in HA with OS and version info
@@ -19,7 +37,7 @@ A [HACS](https://hacs.xyz/) custom integration that monitors your [UrBackup](htt
 
 1. Open **HACS** in your Home Assistant instance
 2. Click the three-dot menu → **Custom repositories**
-3. Add `whallil/ha-urbackup-monitor` with category **Integration**
+3. Add `theseal666/ha-urbackup-monitor` with category **Integration**
 4. Click **Download**
 5. Restart Home Assistant
 
