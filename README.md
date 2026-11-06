@@ -1,4 +1,4 @@
-<img src="brand/icon.png" alt="" width="76">
+<img src="custom_components/urbackup/brand/icon.png" alt="" width="76">
 
 # UrBackup Monitor for Home Assistant
 
@@ -208,10 +208,15 @@ UrBackup Server 2.x+ · Home Assistant 2024.1.0+ · HACS 2.0.0+
 
 ## Brand icon
 
-Home Assistant shows "icon not available" for custom integrations it has no
-brand assets for. [`brand/`](brand/) holds an icon for this one — see
-[brand/README.md](brand/README.md) for the files and how to get Home Assistant
-to actually use them.
+Home Assistant shows "icon not available" for integrations it has no brand
+images for. [`custom_components/urbackup/brand/`](custom_components/urbackup/brand/)
+holds an icon for this one.
+
+Home Assistant 2026.3 and newer load it from there directly — local images take
+priority over the brands CDN, and no pull request against home-assistant/brands
+is needed. Older versions ignore it and keep showing the placeholder; see
+[the brand README](custom_components/urbackup/brand/README.md) for that
+fallback and for how to regenerate the files.
 
 ## License
 
