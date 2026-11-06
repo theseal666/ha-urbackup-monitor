@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>UrBackup Monitor</title>
+  <rect width="256" height="256" rx="58" ry="58" fill="#41BDF5" stroke="none"/>
+  <ellipse cx="112" cy="78" rx="54" ry="21" fill="#FFFFFF" stroke="none"/>
+  <path d="M58,78 L58,166 A54,21 0 0 0 166,166 L166,78 Z" fill="#FFFFFF" stroke="none"/>
+  <path d="M58,108 A54,21 0 0 0 166,108" fill="none" stroke="#41BDF5" stroke-width="9" stroke-linecap="round"/>
+  <path d="M58,138 A54,21 0 0 0 166,138" fill="none" stroke="#41BDF5" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="186" cy="186" r="60" fill="#41BDF5" stroke="none"/>
+  <circle cx="186" cy="186" r="41" fill="#FFFFFF" stroke="none"/>
+  <path d="M167,187 L180,200 L206,172" fill="none" stroke="#41BDF5"
+        stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
